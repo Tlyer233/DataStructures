@@ -1,0 +1,39 @@
+{
+    "C_Cpp.clang_format_style": "{BasedOnStyle: LLVM, BreakBeforeBraces: Attach, AlignTrailingComments: true, ReflowComments: true, SpacesBeforeTrailingComments: 2, IndentWidth: 4, TabWidth: 4, UseTab: Never, ColumnLimit: 100, AllowShortIfStatementsOnASingleLine: true, AllowShortBlocksOnASingleLine: Always, AllowShortLoopsOnASingleLine: true, AllowShortCaseLabelsOnASingleLine: true, AllowShortFunctionsOnASingleLine: All, IndentCaseLabels: true, PointerAlignment: Right}",
+    "C_Cpp.clang_format_fallbackStyle": "LLVM",
+    "editor.formatOnSave": true, // 保存时自动格式化
+    "editor.defaultFormatter": "ms-vscode.cpptools",
+    // 使用C/C++扩展的格式化工具
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    // 配置多文件运行
+    "code-runner.executorMap": {
+        // 单个文件
+        //"c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        // "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt", 
+        // 多个文件
+        "c": "cd $dir && gcc *.c -o multiC && $dir\\multiC",
+        "cpp": "cd $dir && g++ *.cpp -o multiCPP && $dir\\multiCPP",
+    },
+    "files.associations": {
+        "header.h": "c",
+        "generallist.h": "c",
+        "random": "c",
+        "bit": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+        "type_traits": "cpp",
+        "cmath": "cpp",
+        "limits": "cpp",
+        "new": "cpp",
+        "array": "c",
+        "string": "c",
+        "string_view": "c",
+        "span": "c",
+        "polynomial.h": "c",
+        "time.h": "c",
+        "assert.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "enabled"
+}

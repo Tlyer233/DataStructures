@@ -1,0 +1,57 @@
+{
+    "configurations": [
+        {
+            "name": "C调试",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\multiC.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "D:/mingw64/bin",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "D:\\mingw64\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "gcc"
+        },
+        {
+            "name": "C++调试",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\multiCPP.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "D:/mingw64/bin",
+            "environment": [],
+            "externalConsole": true, // 是否使用系统控制台进行调试
+            "MIMode": "gdb",
+            "miDebuggerPath": "D:\\mingw64\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "g++" // 就改一个地方
+        }
+    ],
+    "version": "2.0.0"
+}

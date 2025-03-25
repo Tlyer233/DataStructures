@@ -1,0 +1,54 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild", // 
+			"label": "gcc", // C运行
+			"command": "D:/mingw64/bin/gcc.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				// "${file}",
+				"${fileDirname}\\*.c",
+				"-o",
+				"${fileDirname}\\multiC.exe"
+			],
+			"detail": "compiler: D:/mingw64/bin/gcc.exe",
+			"options": {
+				"cwd": "${fileDirname}",
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+		},
+		{
+			"type": "cppbuild",
+			"label": "g++", // C++运行
+			"command": "D:/mingw64/bin/g++.exe", // 使用g++编译器
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				// "${file}",
+				"${fileDirname}\\*.cpp",
+				"-std=c++11", // 添加C++标准参数
+				"-o",
+				"${fileDirname}\\multiCPP.exe"
+			],
+			"detail": "compiler: D:/mingw64/bin/g++.exe",
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [ // 错误输出
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+		}
+	]
+}
