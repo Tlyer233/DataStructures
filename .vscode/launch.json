@@ -4,10 +4,10 @@
             "name": "C调试",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}\\multiC.exe",
+            "program": "${fileDirname}/output.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "D:/mingw64/bin",
+            "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
@@ -24,16 +24,16 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "gcc"
+            "preLaunchTask": "gcc-utf8"
         },
         {
             "name": "C++调试",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}\\multiCPP.exe",
+            "program": "${fileDirname}/output.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "D:/mingw64/bin",
+            "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": true, // 是否使用系统控制台进行调试
             "MIMode": "gdb",

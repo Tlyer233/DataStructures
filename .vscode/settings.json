@@ -11,10 +11,10 @@
     "code-runner.executorMap": {
         // 单个文件
         //"c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-        // "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt", 
+        // "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         // 多个文件
-        "c": "cd $dir && gcc *.c -o multiC && $dir\\multiC",
-        "cpp": "cd $dir && g++ *.cpp -o multiCPP && $dir\\multiCPP",
+        "c": "chcp 65001 && cd $dirWithoutTrailingSlash && gcc *.c -o output && .\\output.exe",
+        "cpp": "chcp 65001 && cd $dirWithoutTrailingSlash && g++ *.cpp -o output && .\\output.exe"
     },
     "files.associations": {
         "header.h": "c",
@@ -35,5 +35,8 @@
         "time.h": "c",
         "assert.h": "c"
     },
-    "C_Cpp.errorSquiggles": "enabled"
+    "C_Cpp.errorSquiggles": "enabled",
+    "code-runner.terminalRoot": "",
+    "code-runner.runInTerminal": true,
+    "code-runner.saveFileBeforeRun": true
 }

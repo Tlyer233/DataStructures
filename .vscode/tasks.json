@@ -11,11 +11,12 @@
 				// "${file}",
 				"${fileDirname}\\*.c",
 				"-o",
-				"${fileDirname}\\multiC.exe"
+				"output.exe"
 			],
 			"detail": "compiler: D:/mingw64/bin/gcc.exe",
 			"options": {
 				"cwd": "${fileDirname}",
+				"shell": true
 			},
 			"problemMatcher": [
 				"$gcc"
@@ -36,11 +37,12 @@
 				"${fileDirname}\\*.cpp",
 				"-std=c++11", // 添加C++标准参数
 				"-o",
-				"${fileDirname}\\multiCPP.exe"
+				"output.exe"
 			],
 			"detail": "compiler: D:/mingw64/bin/g++.exe",
 			"options": {
-				"cwd": "${fileDirname}"
+				"cwd": "${fileDirname}",
+				"shell": true
 			},
 			"problemMatcher": [ // 错误输出
 				"$gcc"
@@ -49,6 +51,53 @@
 				"kind": "build",
 				"isDefault": true
 			},
+		},
+		{
+			"type": "shell",
+			"label": "gcc-utf8",
+			"command": "chcp 65001 && D:/mingw64/bin/gcc.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"*.c",
+				"-o",
+				"output.exe"
+			],
+			"options": {
+				"cwd": "${fileDirname}",
+				"shell": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"type": "shell",
+			"label": "g++-utf8",
+			"command": "chcp 65001 && D:/mingw64/bin/g++.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"*.cpp",
+				"-std=c++11",
+				"-o",
+				"output.exe"
+			],
+			"options": {
+				"cwd": "${fileDirname}",
+				"shell": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			}
 		}
 	]
 }

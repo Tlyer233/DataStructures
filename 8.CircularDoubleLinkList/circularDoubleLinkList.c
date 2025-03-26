@@ -6,19 +6,14 @@ CDLNode *initCircularDoubleLinkList(void) {
     phead->data = 0;
     phead->next = phead->prev = phead;
 
-    CDLNode *pmove = phead;
-
     int input;
     while (scanf("%d", &input) == 1 && input != -1) {
         CDLNode *newNode = (CDLNode *)malloc(sizeof(CDLNode));
         newNode->data = input;
         // 尾插法
-        newNode->prev = pmove;
-        pmove->next = newNode;
+        phead->prev->next = newNode;
+        newNode->prev = phead->prev;
         newNode->next = phead;
-        phead->prev = newNode;
-
-        pmove = pmove->next;
 
         phead->data++;
     }
