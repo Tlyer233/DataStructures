@@ -1,5 +1,5 @@
 {
-    "C_Cpp.clang_format_style": "{BasedOnStyle: LLVM, BreakBeforeBraces: Attach, AlignTrailingComments: true, ReflowComments: true, SpacesBeforeTrailingComments: 2, IndentWidth: 4, TabWidth: 4, UseTab: Never, ColumnLimit: 100, AllowShortIfStatementsOnASingleLine: true, AllowShortBlocksOnASingleLine: Always, AllowShortLoopsOnASingleLine: true, AllowShortCaseLabelsOnASingleLine: true, AllowShortFunctionsOnASingleLine: All, IndentCaseLabels: true, PointerAlignment: Right}",
+    "C_Cpp.clang_format_style": "{BasedOnStyle: LLVM, BreakBeforeBraces: Attach, AlignTrailingComments: true, ReflowComments: true, SpacesBeforeTrailingComments: 2, IndentWidth: 4, TabWidth: 4, UseTab: Never, ColumnLimit: 250, AllowShortIfStatementsOnASingleLine: false, AllowShortBlocksOnASingleLine: Never, AllowShortLoopsOnASingleLine: false, AllowShortCaseLabelsOnASingleLine: false, AllowShortFunctionsOnASingleLine: None, IndentCaseLabels: true, PointerAlignment: Right}",
     "C_Cpp.clang_format_fallbackStyle": "LLVM",
     "editor.formatOnSave": true, // 保存时自动格式化
     "editor.defaultFormatter": "ms-vscode.cpptools",
@@ -33,7 +33,8 @@
         "span": "c",
         "polynomial.h": "c",
         "time.h": "c",
-        "assert.h": "c"
+        "assert.h": "c",
+        "cctype": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled",
     "code-runner.terminalRoot": "",
