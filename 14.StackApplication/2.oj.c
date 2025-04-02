@@ -28,7 +28,7 @@ int isOperator(char op) {
 char *preProcessing(char *infixExpression) {
     // 1-(    -2) ===>  1-(     0-2)
     char *newExpression = (char *)malloc(sizeof(char) * N);
-    int flag =1;  // flag=1 表示前一个为 +-()' '
+    int flag = 1;  // flag=1 表示前一个为 +-()' '
     int j = 0;
     for (int i = 0; i < strlen(infixExpression); i++, j++) {
         if (infixExpression[i] == ' ') {  // 顺便把空格去了
@@ -151,7 +151,75 @@ int calculate(char *s) {
     return ans;
 }
 
+// 翻转字符串
+char *reverse(char *str) {
+    if (str == NULL)
+        return NULL;
+
+    int length = strlen(str);
+    char *result = (char *)malloc(length + 1);
+    if (result == NULL)
+        return NULL;
+
+    for (int i = 0; i < length; i++) {
+        char temp = str[length - 1 - i];
+        if (temp == '(')
+            result[i] = ')';
+        else if (temp == ')')
+            result[i] = '(';
+        else
+            result[i] = temp;
+    }
+    result[length] = '\0';
+
+    return result;  // 注意：调用者需要负责释放这个内存
+}
+
+// 计算前缀表达式
+int executePerfixExp(char *perfixExpress) {
+    head = -1;  // 清空栈
+    int i = strlen(perfixExpress) - 1;
+    while (i >= 0) {
+        // case1:如果是数字
+        if (isdigit(perfixExpress[i])) {
+            char temp[100] = "";
+            while (isdigit(perfixExpress[i])) {
+                char partNum[2] = {perfixExpress[i--], '\0'};
+                strcat(temp, partNum);
+            }
+            calcuStack[++head] = atoi(temp);
+            i--;  // 跳过空格
+        } else {
+            int a = calcuStack[head--];  
+            int b = calcuStack[head--];
+            char op = perfixExpress[i];
+            calcuStack[++head] = myCalculate(a, b, op);
+            i -= 2;  // 跳过"操作符"和"空格"
+        }
+    }
+    return calcuStack[head--];
+}
+
+// 计算前缀表达式
+int executePerfixExpression(char *infixExpression) {
+    infixExpression = reverse(infixExpression);
+    printf("翻转字符串: %s", infixExpression);
+    // STEP1:转为前缀表达式
+    char *perfixExpression = reverse(convertInfix2Postfix(infixExpression));
+    printf("%s\n", perfixExpression);
+    // STEP2:计算前缀表达式
+    int ans =executePerfixExp(perfixExpression);
+    return ans;
+}
+
+void test01() {
+    char *input = "(7 - 2) + (8/4) * 8";
+    printf("%d", executePerfixExpression(input));
+}
+
 int main() {
+    test01();
+    return 0;
     char infixExpression[N];           //  2-1 + 2
     scanf("%[^\n]", infixExpression);  // TODO %[^\n] 是 C 语言 scanf 的扫描集（scanset）用法
     getchar();                         // 吸收输入缓冲区的换行符
