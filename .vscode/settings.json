@@ -34,7 +34,11 @@
         "polynomial.h": "c",
         "time.h": "c",
         "assert.h": "c",
-        "cctype": "cpp"
+        "cctype": "cpp",
+        "exception": "cpp",
+        "format": "cpp",
+        "stack": "cpp",
+        "variant": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled",
     "code-runner.terminalRoot": "",
