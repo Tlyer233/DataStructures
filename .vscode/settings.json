@@ -38,7 +38,8 @@
         "exception": "cpp",
         "format": "cpp",
         "stack": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "linear.h": "c"
     },
     "C_Cpp.errorSquiggles": "enabled",
     "code-runner.terminalRoot": "",
